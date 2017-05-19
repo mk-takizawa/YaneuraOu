@@ -1,0 +1,128 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+<meta content="ja" http-equiv="Content-Language" />
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
+<title>コンピュータ将棋ソフト「elmo」導入方法</title>
+<style type="text/css">
+.auto-style1 {
+	margin-bottom: 19px;
+}
+</style>
+</head>
+
+<body>
+
+<h2>コンピュータ将棋ソフト「elmo」導入方法</h2>
+<hr />
+<p>本ページでは、2017年の世界コンピュータ将棋選手権優勝ソフト「elmo」の導入方法(Windows版)を記載しています。<br />
+なお、<a href="http://hiraokatakuya.github.io/apery/howtouse.html">Aperyの導入ページ</a>を参考にしています(感謝！) 
+。本手順は今後もう少し導入し易い＋分かり易いように整備したいと思います。</p>
+<hr />
+<h3>１．システム要件</h3>
+<p>elmoのシステム要件は実行する将棋エンジン(以下では、やねうら王を利用しています)と同様となりますが、快適に動作するために以下環境を推奨します。
+</p>
+<ul>
+	<li>64bit OSであること(※)</li>
+	<li>CPU: SSE 4.2 対応のCPU（Core iシリーズ以降のIntel製CPUもしくは同等程度のAMD製CPU）</li>
+	<li>メモリ: 2GB以上の空きメモリ（4GB以上のメモリ搭載を推奨）</li>
+</ul>
+<p>(※)現状のコンピュータ将棋プログラムは64bitOSを前提に作成されており、恐れ入りますが本ページで紹介する方法ではご利用することができません。</p>
+<hr />
+<h3>２．64bit版の確認</h3>
+<p>
+Windowsが64bit版であることを確認します。以下サイトを参考に64bit版であることをご確認お願いします。</p>
+<ul>
+	<li><a href="https://support.microsoft.com/ja-jp/help/958406">～windows 7, 
+	windows 8</a> 
+	(microsoft社サポートページ)</li>
+	<li>
+	<a href="http://faq.ricoh.jp/app/answers/detail/a_id/58/~/パソコンの-os-とビット数の確認方法-(windows-xp/vista/7/8/8.1/10)">
+	windows 10を含む全バージョン</a> (RICOH社サポートページ；こちらの方が分かり易いです)</li>
+</ul>
+<hr />
+<h3>３．やねうら王のダウンロード</h3>
+<p>elmoは評価関数(と定跡)に独自性を持つプログラムであり、それ以外の部分は既存プログラムを利用しています。2017年の世界コンピュータ将棋選手権ではやねうら王を利用致しましたので
+本説明ではやねうら王を利用する方法をご説明いたします。
+</p>
+<ul>
+	<li>
+	<h4><a href="https://github.com/yaneurao/YaneuraOu/">やねうら王のgithub</a>にアクセスし、最新のやねうら王をダウンロードします。</h4>
+	</li>
+</ul>
+<p>
+<img alt="やねうら王をダウンロードします" height="438" src="image/elmo_yane_git.png" width="722" /></p>
+<p>YaneuraOu-master.zipを適当なところに保存し、zipファイルを展開してください。以下のようにzipファイルが展開出来ていれば問題ありません。※下記は「表示」→「詳細」を選択している時の表示となります。同じ名前のファイルがあれば問題ありません。</p>
+<p>
+<img alt="解凍したファイル群" height="250" src="image/elmo_yane_files.PNG" width="715" /></p>
+<hr />
+<h3>４．elmoをダウンロードします。</h3>
+<p><a href="https://drive.google.com/file/d/0B0XpI3oPiCmFalVGclpIZjBmdGs">
+elmoの評価関数と定跡ファイルを取得します。</a> ←このリンクを押下してください。</p>
+
+<p>
+<img alt="elmoをダウンロードします" height="187" src="image/elmo_download_01.png" width="451" /></p>
+<p>
+<img alt="elmoをダウンロードします" height="247" src="image/elmo_download_02.png" width="709" /></p>
+<p>elmo.shogi.zipをダウンロードして、こちらも適当な場所に展開してください。以下のようにzipファイルが展開出来ていれば問題ありません。</p>
+<p>
+<img alt="elmo展開後のファイル" height="131" src="image/elmo_files_01.PNG" width="425" /></p>
+<hr />
+<h3>５．elmoの評価関数／定跡を設置します</h3>
+<p><strong>elmoの評価関数ファイルをやねうら王のフォルダに設置します。なお、以下コピーと記載されている部分は「切り取り」で問題ありません。</strong></p>
+<p>
+<img alt="elmoのevalフォルダ" height="192" src="image/elmo_files_eval.png" width="529" /></p>
+<p>
+<img alt="やねうら王のevalフォルダ" height="159" src="image/elmo_yane_files_eval.png" width="581" /></p>
+<p><strong>同様に、elmoの定跡ファイルをやねうら王のフォルダに設置します。</strong></p>
+<p class="auto-style1">
+<img alt="elmoのbookフォルダ" height="148" src="image/elmo_files_book.png" width="555" /></p>
+<p class="auto-style1">
+<img alt="やねうら王のbookフォルダ" height="152" src="image/elmo_yane_files_book.png" width="566" /></p>
+<p class="auto-style1">
+<strong>最後に出来上がったeval/bookフォルダを2017Earlyフォルダに移動します。</strong></p>
+<p class="auto-style1">
+<img alt="移動後のフォルダ" height="283" src="image/elmo_yane_files_move_to.PNG" width="610" /></p>
+<p class="auto-style1">
+<strong>これでelmoの出来上がりです。将棋GUIソフト(例：将棋所)から利用します。</strong></p>
+<hr />
+<h3>６．将棋所のダウンロード、利用</h3>
+<p>対局／検討するために将棋GUIソフトである将棋所を例に使い方を説明します。<a href="http://www.geocities.jp/shogidokoro/download.html">将棋所のwebサイト</a>へアクセスし、将棋所をダウンロードします。</p>
+<p>　<img alt="将棋所ダウンロード" height="237" src="image/elmo_shogidokoro_download.png" width="537" /></p>
+<p>本ページ作成時の最新版は3.8.4でした。最新バージョンが異なる場合、最新のものをダウンロードしてください。</p>
+<p>こちらもShogidokoro.zipを展開し、Shogidokoro.exeを実行してください。まずエンジン管理を開きます。</p>
+<p>
+<img alt="エンジン管理を開きます" height="370" src="image/elmo_shogidokoro_engine_add.png" width="587" /></p>
+
+
+<p>やねうら王(elmo)を設定します。</p>
+<p>
+<img alt="やねうら王(elmo)の追加" height="430" src="image/elmo_shogidokoro_engine_yane.png" width="704" /></p>
+
+
+<p>YaneuraOu-2017-early-tournament.exeが最も高速に動作しますが、2013年6月以降に発表されたCPUでしか利用できません。あまり難しいことを考えずに上図の下のファイルから順番に選択して、開いてみてください。正常登録出来ればそれが使えます。</p>
+<p>
+<img alt="正常登録された場合のポップアップ" height="162" src="image/elmo_shogidokoro_engine_added.PNG" width="482" /></p>
+<p>正常に登録された場合、上図が表示されます(*-tournament.exeを登録した場合のもの)</p>
+<p>続いて、やねうら王(elmo)の設定をします。</p>
+<p>
+<img alt="やねうら王の設定" height="720" src="image/elmo_shogidokoro_engine_configure.png" width="661" /></p>
+<p>設定は以下変更を推奨します（変更の無いところは割愛しています）。</p>
+<p>Threads: CPUコア数の2倍&nbsp;&nbsp;&nbsp; Hash: 
+16(MB;メモリに余裕がある場合は32,64,128,256,512,1024と2倍ずつ増やしてみてください)<br />
+NetworkDelay: 0 (都度想定されるNW遅延(ms))&nbsp; NetworkDelay2: 0 
+(最大で想定されるNW遅延(ms))<br />
+MinimumThinkingTime: 1000&nbsp;&nbsp;&nbsp; BookMoves: 200 (定跡を200手まで採用する)<br />
+BookDepthLimit:&nbsp; 0&nbsp;&nbsp;&nbsp; ConsiderationMode: 
+検討時にチェック、対局時はチェックしない。</p>
+<p>各項目についてはやねうら王のdocs\USI拡張コマンド.txtやdocs\解説.txt に説明があります。</p>
+<p>これで全ての設定が完了しました。対局／検討／棋譜解析をelmoで実行することができます。対局からそれぞれのメニューが選べます。</p>
+
+<p>
+<img alt="使ってみよう" height="356" src="image/elmo_shogidokoro_finish.png" width="581" /></p>
+<hr />
+
+</body>
+
+</html>
