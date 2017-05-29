@@ -26,9 +26,9 @@
 <ul>
 	<li>64bit OSであること(※)</li>
 	<li>CPU: SSE 4.2 対応のCPU（Core iシリーズ以降のIntel製CPUもしくは同等程度のAMD製CPU）</li>
-	<li>メモリ: 2GB以上の空きメモリ（4GB以上のメモリ搭載を推奨）</li>
+	<li>メモリ: 4GB以上の空きメモリ</li>
 </ul>
-<p>(※)現状のコンピュータ将棋プログラムは64bitOSを前提に作成されており、恐れ入りますが本ページで紹介する方法ではご利用することができません。</p>
+<p>(※)現状のコンピュータ将棋プログラムは64bitOSを前提に作成されており、恐れ入りますが32bit版は本ページで紹介する方法ではご利用することができません。</p>
 <hr />
 <h3>２．64bit版の確認</h3>
 <p>
@@ -110,7 +110,7 @@ elmoの評価関数と定跡ファイルを取得します。</a> ←このリ�
 <img alt="やねうら王の設定" height="720" src="image/elmo_shogidokoro_engine_configure.png" width="661" /></p>
 <p>設定は以下変更を推奨します（変更の無いところは割愛しています）。</p>
 <p>Threads: CPUコア数の2倍&nbsp;&nbsp;&nbsp; Hash: 
-16(MB;メモリに余裕がある場合は32,64,128,256,512,1024と2倍ずつ増やしてみてください)<br />
+16(MB;メモリに余裕がある場合は32,64,128,256,512,1024...と2倍ずつ増やしてみてください)<br />
 NetworkDelay: 0 (都度想定されるNW遅延(ms))&nbsp; NetworkDelay2: 0 
 (最大で想定されるNW遅延(ms))<br />
 MinimumThinkingTime: 1000&nbsp;&nbsp;&nbsp; BookMoves: 200 (定跡を200手まで採用する)<br />
