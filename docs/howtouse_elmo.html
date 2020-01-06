@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 
 <head>
@@ -17,7 +17,7 @@
 
 <body>
 
-<h2>コンピュータ将棋ソフト「elmo」導入方法 2018/12/8更新</h2>
+<h2>コンピュータ将棋ソフト「elmo」導入方法 2020/01/07更新</h2>
 <hr />
 <p>本ページでは、「elmo」の導入方法(Windows版)を記載しています。<br />
 </p>
@@ -26,20 +26,20 @@
 <p>elmoのシステム要件は実行する将棋エンジン(以下、やねうら王を利用しています)と同様となりますが、快適に動作するために以下環境を推奨します。
 </p>
 <ul>
-	<li>64bit OSであること(※)</li>
+	<li>64bit OSであること</li>
 	<li>CPU: SSE 4.2 対応のCPU（Core iシリーズ以降のIntel製CPUもしくは同等程度のAMD製CPU）</li>
 	<li>メモリ: 4GB以上の空きメモリ</li>
 </ul>
-<p>(※)現状のコンピュータ将棋プログラムは64bitOSを前提に作成されており、32bit版は本ページで紹介する方法では利用することができません。</p>
 <hr />
 <h3>２．やねうら王のダウンロード</h3>
-<p>elmoは評価関数(と定跡)に独自性を持つプログラムであり、それ以外の部分は既存プログラムを利用しています。やねうら王を利用する方法を説明します。
+<p>elmoは評価関数に独自性を持つプログラムであり、それ以外の部分は既存プログラムを利用しています。やねうら王を利用する方法を説明します。
 </p>
 <ul>
 	<li>
 	<h4><a href="https://github.com/yaneurao/YaneuraOu/releases/latest">やねうら王のgithub</a>にアクセスし、最新のやねうら王をダウンロードします。</h4>
 	</li>
 </ul>
+<h4 class="auto-style2">2018年迄のelmoはKPPT型、2019年のelmoはNNUE型となります。</h4>
 <p>
 <img alt="やねうら王をダウンロードします" height="361" src="image/elmo_yane_git2.png" width="1081" /></p>
 <p>適当なところに保存し、zipファイルを展開してください。以下のようにzipファイルが展開出来ていれば問題ありません。※下記は「表示」→「詳細」を選択している時の表示となります。同じ名前のファイルがあれば問題ありません。</p>
@@ -53,6 +53,9 @@ elmo 2017/5&nbsp; 世界コンピュータ将棋選手権(WCSC27)版 (優勝)</a
 	<li><a href="https://drive.google.com/file/d/0B0XpI3oPiCmFalVGclpIZjBmdGs">elmo 2017/11 将棋電王トーナメント(SDT5)版</a> 
 	評価関数＋定跡</li>
 	<li><a href="https://drive.google.com/file/d/0B0XpI3oPiCmFalVGclpIZjBmdGs">elmo 2018/5&nbsp; 世界コンピュータ将棋選手権(WCSC28)版</a> 
+	評価関数</li>
+	<li>
+	<a href="https://drive.google.com/open?id=1geE42yhY8fAG-ouEUx7_u6HQw1OjBQ2O">elmo 2019/5 世界コンピュータ将棋選手権(WCSC29)版</a>
 	評価関数</li>
 </ul>
 <p><span class="auto-style2">以下では2017年の世界コンピュータ選手権版にて説明します。</span></p>
@@ -77,10 +80,11 @@ elmo 2017/5&nbsp; 世界コンピュータ将棋選手権(WCSC27)版 (優勝)</a
 <p>
 <img alt="elmoのevalフォルダ" height="192" src="image/elmo_files_eval.png" width="529" /></p>
 <p>
-2018年版までは上記の通りの3ファイルを評価関数として利用しています。2019年度からは1ファイルとなる見通しです。</p>
+2018年版までは上記の通りの3ファイルを評価関数として利用しています。2019年版はnn.binという1ファイルのみとなります。同じようにevalフォルダ配下に移動してください。</p>
 <p>
 <img alt="やねうら王のevalフォルダ" height="161" src="image/elmo_yane_files_eval2.png" width="557" /></p>
-<p>同様に、elmoの定跡ファイル(standard_book.db; ある場合)をやねうら王のフォルダに設置します。電王トーナメント版ではbookフォルダ直下にファイルがあります。</p>
+<p>同様に、elmoの定跡ファイル(standard_book.db; ある場合)をやねうら王のフォルダに設置します。電王トーナメント版ではbookフォルダ直下にファイルがあります。<br />
+2018年版以降は定跡ファイルがありません。</p>
 <p class="auto-style1">
 <img alt="elmoのbookフォルダ" height="148" src="image/elmo_files_book.png" width="555" /></p>
 <p class="auto-style1">
@@ -106,7 +110,10 @@ elmo 2017/5&nbsp; 世界コンピュータ将棋選手権(WCSC27)版 (優勝)</a
 <p>
 <img alt="やねうら王(elmo)の追加" height="546" src="image/elmo_shogidokoro_engine_yane2.png" width="665" /></p>
 
-<p>*_tournament.exeが最も高速に動作しますが、2013年6月以降に発表されたCPU(Intel Core 第4世代以降)でしか利用できません。あまり難しいことを考えずに以下高速に動作する順に選択して、開いてみてください。正常登録出来ればそれが使えます。</p>
+<p>exeが沢山ありますが(windowsの設定によっては".exe"の部分が非表示となっている場合有)、利用するのはこの中の1つだけです。<br />
+2019年版はYaneuraOu2018NNUE_tournament.exe等の、"NNUE"を含むものを利用します。2018年版迄は"KPPT"を含むものを利用します。<br />
+_tournamentやsse2等の部分はコンパイル方法の違いによるもので、最新のCPUほど高速に動作するものが利用可能です。<br />
+*_tournament.exeが最も高速に動作しますが、2013年6月以降に発表されたCPU(Intel Core 第4世代以降)でしか利用できません。あまり難しいことを考えずに以下高速に動作する順に選択して、開いてみてください。正常登録出来ればそれが使えます(avx2が動作)。</p>
 <ol>
   <li><strong>*_tournament.exe</strong></li>
   <li><strong>*_sse42.exe</strong></li>
